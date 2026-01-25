@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch --all --prune)",
+      "Bash(powershell:*)",
+      "Bash(git config:*)",
+      "Bash(Get-Content:*)",
+      "Bash(.specify/scripts/powershell/setup-plan.ps1 -Json)",
+      "Bash(test:*)",
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "Skill(sp.tasks)",
+      "Bash(git rev-parse:*)",
+      "Bash(uvicorn:*)",
+      "Bash(pip install -r requirements.txt)",
+      "Bash(timeout:*)",
+      "Bash(pip install:*)",
+      "Bash(curl:*)",
+      "Bash(python -c \"from app.models.task import Task; from app.models.user import User; print\\(''✓ Models imported successfully''\\)\")",
+      "Bash(python:*)",
+      "Bash(ls:*)",
+      "Bash(npm install lucide-react @headlessui/react)",
+      "Bash(npm run build)"
+    ]
+  }
+}
