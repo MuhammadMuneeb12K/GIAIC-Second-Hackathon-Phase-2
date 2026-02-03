@@ -1,23 +1,32 @@
-// Task type definition
 export interface Task {
   id: string;
   title: string;
   description?: string;
-  completed: boolean;
-  createdAt: string; // ISO 8601 format
-  updatedAt: string; // ISO 8601 format
-  userId: string;
+  status: 'todo' | 'in_progress' | 'done';
+  priority: 'low' | 'medium' | 'high';
+  due_date?: string; // ISO date string
+  created_at: string;
+  updated_at: string;
 }
 
-// Task form data for create/update operations
-export interface TaskFormData {
+export interface CreateTaskRequest {
   title: string;
   description?: string;
+  status?: 'todo' | 'in_progress' | 'done';
+  priority?: 'low' | 'medium' | 'high';
+  due_date?: string;
 }
 
-// Task update data (all fields optional)
-export interface TaskUpdateData {
+export interface UpdateTaskRequest {
   title?: string;
   description?: string;
-  completed?: boolean;
+  status?: 'todo' | 'in_progress' | 'done';
+  priority?: 'low' | 'medium' | 'high';
+  due_date?: string;
+}
+
+export interface TaskFilterParams {
+  status?: 'todo' | 'in_progress' | 'done';
+  priority?: 'low' | 'medium' | 'high';
+  search?: string;
 }
