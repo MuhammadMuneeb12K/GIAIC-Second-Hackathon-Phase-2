@@ -1,25 +1,23 @@
-// Generic API response wrapper
-export interface ApiResponse<T> {
+
+export interface ApiErrorResponse {
+  detail: string | { [key: string]: string };
+}
+
+export interface ApiSuccessResponse<T> {
   data: T;
-  message?: string;
-}
-
-// API error response
-export interface ApiError {
-  error: string;
   message: string;
-  statusCode: number;
 }
 
-// API error class for better error handling
-export class ApiErrorResponse extends Error {
-  statusCode: number;
-  error: string;
-
-  constructor(error: ApiError) {
-    super(error.message);
-    this.name = "ApiErrorResponse";
-    this.statusCode = error.statusCode;
-    this.error = error.error;
-  }
+export interface PaginationParams {
+  page?: number;
+  per_page?: number;
 }
+
+export interface PaginatedResponse<T> {
+  items: T[];
+  total: number;
+  page: number;
+  per_page: number;
+  pages: number;
+}
+
