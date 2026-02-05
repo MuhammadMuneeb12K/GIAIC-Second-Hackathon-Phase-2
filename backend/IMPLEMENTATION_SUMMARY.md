@@ -105,9 +105,14 @@ Edit `.env` with your actual values:
 ```
 DATABASE_URL=postgresql://user:password@host:5432/database
 BETTER_AUTH_SECRET=your-secret-key-minimum-32-characters-long
-FRONTEND_URL=http://localhost:3000
+FRONTEND_URL=https://my-todo-app-lyart-one.vercel.app
 ACCESS_TOKEN_EXPIRE_MINUTES=15
 REFRESH_TOKEN_EXPIRE_DAYS=7
+```
+
+For local development:
+```
+FRONTEND_URL=http://localhost:3000
 ```
 
 ### 2. Install Dependencies
@@ -127,6 +132,12 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 
 ### 4. Access API Documentation
 
+**Production**:
+- **Swagger UI**: https://muhammadmuneebkhn-todo-app-backend.hf.space/docs
+- **ReDoc**: https://muhammadmuneebkhn-todo-app-backend.hf.space/redoc
+- **Health Check**: https://muhammadmuneebkhn-todo-app-backend.hf.space/
+
+**Local Development**:
 - **Swagger UI**: http://localhost:8001/docs
 - **ReDoc**: http://localhost:8001/redoc
 - **Health Check**: http://localhost:8001/

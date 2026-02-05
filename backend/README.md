@@ -66,10 +66,14 @@ FastAPI backend for a secure, multi-user todo application with JWT authenticatio
 
 ## API Documentation
 
-Once the server is running, access the interactive API documentation:
+Access the interactive API documentation:
 
-- **Swagger UI**: http://localhost:8001/docs
-- **ReDoc**: http://localhost:8001/redoc
+- **Production Swagger UI**: https://muhammadmuneebkhn-todo-app-backend.hf.space/docs
+- **Production ReDoc**: https://muhammadmuneebkhn-todo-app-backend.hf.space/redoc
+
+For local development:
+- **Local Swagger UI**: http://localhost:8001/docs
+- **Local ReDoc**: http://localhost:8001/redoc
 
 ## API Endpoints
 
