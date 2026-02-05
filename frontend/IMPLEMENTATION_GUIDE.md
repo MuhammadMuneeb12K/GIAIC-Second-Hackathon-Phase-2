@@ -60,7 +60,7 @@ This guide documents the complete UI redesign of the TaskFlow Todo Dashboard app
 
 ### Prerequisites
 - Node.js 18+ installed
-- Backend API running on `http://localhost:8001`
+- Backend API available at `https://muhammadmuneebkhn-todo-app-backend.hf.space` (or run locally on `http://localhost:8001`)
 
 ### Installation & Setup
 
@@ -80,12 +80,16 @@ npm run dev
 ```
 
 4. **Open in browser**:
-```
-http://localhost:3000
-```
+- **Production**: https://my-todo-app-lyart-one.vercel.app
+- **Local Development**: http://localhost:3000
 
 ### Environment Variables
-Create a `.env.local` file if you need to customize the API URL:
+Create a `.env` file with the backend API URL:
+```env
+NEXT_PUBLIC_API_URL=https://muhammadmuneebkhn-todo-app-backend.hf.space
+```
+
+For local backend development:
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:8001
 ```

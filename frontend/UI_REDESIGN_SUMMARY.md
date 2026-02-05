@@ -118,9 +118,8 @@ npm run dev
 ```
 
 ### Access the Application
-```
-http://localhost:3000
-```
+- **Production**: https://my-todo-app-lyart-one.vercel.app
+- **Local Development**: http://localhost:3000
 
 ### Build for Production
 ```bash

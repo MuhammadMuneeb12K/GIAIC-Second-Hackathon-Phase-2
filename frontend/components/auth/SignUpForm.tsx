@@ -43,7 +43,7 @@ const SignUpForm: React.FC = () => {
     setIsLoading(true);
 
     try {
-      await signup({ email, password, name: name.trim() || undefined });
+      await signup({ email, password, full_name: name.trim() || undefined });
       router.push("/dashboard");
     } catch (error) {
       if (error instanceof ApiErrorResponse) {

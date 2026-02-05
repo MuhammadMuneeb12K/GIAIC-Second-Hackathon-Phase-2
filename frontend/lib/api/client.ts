@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { storeAuthTokens, clearAuthTokens, getAuthTokens } from './auth';
+import { ApiErrorResponse } from '@/types/api';
 
 const apiClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://muhammadmuneebkhn-todo-app-backend.hf.space',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -41,9 +42,15 @@ apiClient.interceptors.response.use(
           if (typeof window !== 'undefined') {
             window.location.href = '/signin';
           }
+          if (axios.isAxiosError(refreshError) && refreshError.response) {
+            return Promise.reject(new ApiErrorResponse(refreshError.response.data?.detail || 'Failed to refresh token', refreshError.response.data, refreshError.response.status));
+          }
           return Promise.reject(refreshError);
         }
       }
+    }
+    if (axios.isAxiosError(error) && error.response) {
+        return Promise.reject(new ApiErrorResponse(error.response.data?.detail || 'An API error occurred', error.response.data, error.response.status));
     }
     return Promise.reject(error);
   }

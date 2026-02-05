@@ -15,7 +15,8 @@ npm run dev
 ```
 
 ### 2. Access the App
-Open your browser to: **http://localhost:3000**
+- **Production**: https://my-todo-app-lyart-one.vercel.app
+- **Local Development**: http://localhost:3000
 
 ### 3. Test the Features
 - Sign up/Sign in with the enhanced auth pages
@@ -430,9 +431,8 @@ cd frontend && npm run build
 ```
 
 ### Access Application
-```
-http://localhost:3000
-```
+- **Production**: https://my-todo-app-lyart-one.vercel.app
+- **Local Development**: http://localhost:3000
 
 ### View Documentation
 - `UI_REDESIGN_PLAN.md` - Design system

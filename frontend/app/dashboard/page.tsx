@@ -13,7 +13,7 @@ import TaskDeleteConfirm from "@/components/tasks/TaskDeleteConfirm";
 import { CheckSquare, ListTodo, Clock, TrendingUp } from "lucide-react";
 
 export default function DashboardPage() {
-  const { tasks, isLoading, error, createTask, updateTask, deleteTask, toggleTaskCompletion } =
+  const { tasks, loading: isLoading, error, addTask: createTask, editTask: updateTask, removeTask: deleteTask } =
     useTasks();
   const { showToast } = useToastContext();
 
@@ -24,7 +24,7 @@ export default function DashboardPage() {
 
   // Calculate stats
   const totalTasks = tasks.length;
-  const completedTasks = tasks.filter((t) => t.completed).length;
+  const completedTasks = tasks.filter((t) => t.status === 'done').length;
   const pendingTasks = totalTasks - completedTasks;
   const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
 
@@ -53,25 +53,25 @@ export default function DashboardPage() {
     if (!deletingTaskId) return;
 
     setIsDeleting(true);
-    const success = await deleteTask(deletingTaskId);
-    setIsDeleting(false);
-
-    if (success) {
+    try {
+      await deleteTask(deletingTaskId);
       setDeletingTaskId(null);
       showToast("Task deleted successfully", "success");
-    } else {
+    } catch (error) {
       showToast("Failed to delete task", "error");
+    } finally {
+      setIsDeleting(false);
     }
   };
 
   const handleToggleTask = async (id: string, completed: boolean) => {
-    const success = await toggleTaskCompletion(id, completed);
-    if (success) {
+    try {
+      await updateTask(id, { status: completed ? 'done' : 'todo' });
       showToast(
         completed ? "Task marked as complete! ✓" : "Task marked as incomplete",
         "success"
       );
-    } else {
+    } catch (error) {
       showToast("Failed to update task", "error");
     }
   };

@@ -155,7 +155,7 @@ npm run dev
 **Expected**: ✅ Server starts without errors
 
 ### 3. Visual Test
-- Open http://localhost:3000
+- Open https://my-todo-app-lyart-one.vercel.app (production) or http://localhost:3000 (local)
 - Check that Inter font is applied
 - Verify no font loading flicker
 - Confirm all text renders correctly

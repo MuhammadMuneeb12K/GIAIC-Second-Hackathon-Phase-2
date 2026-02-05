@@ -30,3 +30,6 @@ export interface TaskFilterParams {
   priority?: 'low' | 'medium' | 'high';
   search?: string;
 }
+
+// Form data type for task creation/editing
+export type TaskFormData = CreateTaskRequest;

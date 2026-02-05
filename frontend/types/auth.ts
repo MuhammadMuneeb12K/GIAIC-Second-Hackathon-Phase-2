@@ -37,5 +37,6 @@ export interface SignInRequest {
 
 // Auth API response types
 export interface AuthResponse extends AuthTokens {
+  user: User;
 }
 

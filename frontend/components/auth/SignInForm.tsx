@@ -39,7 +39,7 @@ const SignInForm: React.FC = () => {
     setIsLoading(true);
 
     try {
-      await signin({ email, password });
+      await signin({ username: email, password });
       router.push("/dashboard");
     } catch (error) {
       if (error instanceof ApiErrorResponse) {

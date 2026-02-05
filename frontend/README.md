@@ -40,7 +40,12 @@ cp .env.example .env
 
 3. Update `.env` with your API URL:
 ```
-NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_API_URL=https://muhammadmuneebkhn-todo-app-backend.hf.space
+```
+
+For local backend development, use:
+```
+NEXT_PUBLIC_API_URL=http://localhost:8001
 ```
 
 ### Development
@@ -50,7 +55,9 @@ Run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Access the application:
+- **Production**: https://my-todo-app-lyart-one.vercel.app
+- **Local Development**: [http://localhost:3000](http://localhost:3000)
 
 ### Build
 
@@ -124,7 +131,7 @@ frontend/
 
 ## Environment Variables
 
-- `NEXT_PUBLIC_API_URL`: Backend API base URL (default: http://localhost:8000)
+- `NEXT_PUBLIC_API_URL`: Backend API base URL (default: https://muhammadmuneebkhn-todo-app-backend.hf.space)
 
 ## Browser Support
 
